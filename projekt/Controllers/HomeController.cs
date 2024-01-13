@@ -22,6 +22,17 @@ namespace projekt.Controllers
         {
             return View();
         }
+        public IActionResult About(string op)
+        {
+            ViewBag.Op = op;
+            return View();
+        }
+        public IActionResult Calculator()
+        {
+            string op = Request.Query["op"];
+            ViewBag.Op = op;
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
